@@ -15,7 +15,7 @@ class Day05b {
                 it[0].split(",").map { i -> i.toInt() }.toPair(),
                 it[1].split(",").map { i -> i.toInt() }.toPair()
             )
-        }.filter { it.first.first == it.second.first || it.first.second == it.second.second || abs(it.first.first - it.second.first) == abs(it.first.second - it.second.second) }
+        }
         val board = makeBoard(inputs)
         for (input in inputs){
             markBoard(board, input)
