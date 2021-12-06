@@ -1,7 +1,6 @@
 package com.arssycro.advent2021.day05
 
 import com.arssycro.advent2021.readList
-import kotlin.math.abs
 
 fun main() {
     Day05b().process()
@@ -17,7 +16,7 @@ class Day05b {
             )
         }
         val board = makeBoard(inputs)
-        for (input in inputs){
+        for (input in inputs) {
             markBoard(board, input)
         }
         val count = board.flatMap { it.asList() }.count { it > 1 }
