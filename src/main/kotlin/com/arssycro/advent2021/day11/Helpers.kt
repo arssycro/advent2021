@@ -14,7 +14,6 @@ fun Array<IntArray>.print() {
     forEach { println(it.joinToString("")) }
 }
 
-
 fun incrementGrid(grid: Array<IntArray>) {
     val litUp = mutableSetOf<Pair<Int, Int>>()
     for (x in grid.indices) {
