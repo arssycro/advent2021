@@ -1,7 +1,6 @@
 package com.arssycro.advent2021.day14
 
 import com.arssycro.advent2021.readList
-import kotlin.math.ceil
 
 fun main() {
     Day14b().process()
@@ -19,9 +18,10 @@ class Day14b {
             currentCounts = processSubstitutions(currentCounts, substitutions)
         }
         val countsOrdered =
-            currentCounts.flatMap { listOf("${it.key[0]}" to it.value, "${it.key[1]}" to it.value) }
+            currentCounts.map { "${it.key[0]}" to it.value }
                 .groupBy { it.first }
-                .mapValues { ceil(it.value.sumOf { p -> p.second } / 2.0).toLong() }.values.sortedDescending()
+                .mapValues { it.value.sumOf { p -> p.second } }
+                .mapValues { if (it.key[0] == template.last()) it.value + 1 else it.value }.values.sortedDescending()
         println(countsOrdered.first() - countsOrdered.last())
     }
 
