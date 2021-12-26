@@ -3,10 +3,10 @@ package com.arssycro.advent2021.day21
 import com.arssycro.advent2021.readList
 
 fun main() {
-    Day20b().process()
+    Day21b().process()
 }
 
-class Day20b {
+class Day21b {
     fun process() {
         val inputs = readList("/day21.txt")
         val players = getPlayers(inputs)
