@@ -6,6 +6,10 @@ fun readList(file: String) = KClass::class.java.getResource(file)!!.readText().s
 
 fun Collection<*>.printEach() = forEach { println(it) }
 
+fun Array<CharArray>.print() = forEach {
+    println(it.joinToString(""))
+}
+
 fun Array<BooleanArray>.print() = forEach {
     println(it.joinToString("") { b -> if (b) "#" else "." })
 }
